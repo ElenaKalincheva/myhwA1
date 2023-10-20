@@ -7,12 +7,22 @@ public class CashbackHackServiceTest {
 
     @org.testng.annotations.Test
     void Cashback() {
-        CashbackHackService cashbackHackService = new CashbackHackService();
+        CashbackHackService service = new CashbackHackService();
         int amount = 900;
 
-        int actual = cashbackHackService.remain(amount);
+        int actual = service.remain(amount);
         int expected = 100;
 
-        assertEquals(expected, actual);
+        assertEquals(actual, expected);
+    }
+
+    @org.testng.annotations.Test
+    void Cashback2() {
+        CashbackHackService service= new CashbackHackService();
+        int amount = 1000;
+        int actual = service.remain(amount);
+        int expected = 0;
+
+        assertEquals(actual, expected);
     }
 }
